@@ -19,8 +19,8 @@ def hello_world():
     return ["<p>Hello, World!</p>"]
 
 
-@app.route("/excel/parse", methods=["POST"])
-def excel_parse():
+@app.route("/upload", methods=["POST"])
+def upload():
     file1 = request.files['file']
     if not allowed_file(file1.filename):
         return {'path':'', 'error':'not allowed file'}
