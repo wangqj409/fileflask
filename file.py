@@ -2,6 +2,10 @@ from flask import Flask,request
 from pathlib import Path
 import uuid
 from datetime import datetime
+import os,sys
+
+
+apihost = os.getenv('API_HOST')
 
 app = Flask(__name__)
 # app.config['MAX_CONTENT_LENGTH'] = 200 * 1000 * 1000
@@ -28,4 +32,4 @@ def upload():
         
     file1.save(dst)
 
-    return {'path':dst, 'error':''}
+    return {'path':apihost + '/' + dst, 'error':''}
