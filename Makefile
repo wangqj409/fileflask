@@ -7,4 +7,4 @@ run: init
 .PHONY: run
 
 init:
-	pip install Flask gunicorn
+	pip install Flask gunicorn gevent pandas
